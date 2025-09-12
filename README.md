@@ -11,7 +11,7 @@
 
 *Proudly sponsored by [Recall.ai](https://www.recall.ai) since September 2025 — supporting open source transcription innovation.*
 
-**Building meeting transcription features?** Recall.ai is the infrastructure behind 1000+ conversation intelligence products, processing billions of minutes annually. Their Meeting Bot API saves developers 6+ months of engineering time by providing unified access to meeting data from Zoom, Google Meet, Microsoft Teams, and more platforms.
+<img width="1003" height="714" alt="image" src="https://github.com/user-attachments/assets/1f92659b-5fd4-43ab-aedc-6adf4d219905" />
 
 🚀 **Why 1000+ companies choose Recall.ai:**
 - **Perfect speaker diarization** with real participant names (not "Speaker 1, Speaker 2")
