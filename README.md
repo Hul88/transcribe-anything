@@ -7,6 +7,18 @@
 
 ![image](https://github.com/zackees/transcribe-anything/assets/6856673/94bdd1fe-3225-438a-ac1b-09c81f1d4108)
 
+## Sponsored by Recall.ai
+
+*Proudly sponsored by [Recall.ai](https://www.recall.ai) since September 2025 — supporting open source transcription innovation.*
+
+**Building meeting transcription features?** Recall.ai is the infrastructure behind 1000+ conversation intelligence products, processing billions of minutes annually. Their Meeting Bot API saves developers 6+ months of engineering time by providing unified access to meeting data from Zoom, Google Meet, Microsoft Teams, and more platforms.
+
+🚀 **Why 1000+ companies choose Recall.ai:**
+- **Perfect speaker diarization** with real participant names (not "Speaker 1, Speaker 2")
+- **200ms latency** for real-time transcripts and audio streams
+- **99.9% uptime SLA** with enterprise security (SOC2, HIPAA, ISO 27001)
+- **One API** for all meeting platforms — no platform-specific integrations needed
+
 ### USES WHISPER AI
 
 Over 800+⭐'s because this program this app just works! Works great for windows and mac. This whisper front-end app is the only one to generate a `speaker.json` file which partitions the conversation by who doing the speaking.
