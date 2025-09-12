@@ -7,23 +7,24 @@
 
 ![image](https://github.com/zackees/transcribe-anything/assets/6856673/94bdd1fe-3225-438a-ac1b-09c81f1d4108)
 
-## Sponsored by Recall.ai
-
-*Proudly sponsored by [Recall.ai](https://www.recall.ai) since September 2025 — supporting open source transcription innovation.*
-
-<img width="1003" height="714" alt="image" src="https://github.com/user-attachments/assets/1f92659b-5fd4-43ab-aedc-6adf4d219905" />
-
-🚀 **Why 1000+ companies choose Recall.ai:**
-- **Perfect speaker diarization** with real participant names (not "Speaker 1, Speaker 2")
-- **200ms latency** for real-time transcripts and audio streams
-- **99.9% uptime SLA** with enterprise security (SOC2, HIPAA, ISO 27001)
-- **One API** for all meeting platforms — no platform-specific integrations needed
 
 ### USES WHISPER AI
 
 Over 800+⭐'s because this program this app just works! Works great for windows and mac. This whisper front-end app is the only one to generate a `speaker.json` file which partitions the conversation by who doing the speaking.
 
 [![Star History Chart](https://api.star-history.com/svg?repos=zackees/transcribe-anything&type=Date)](https://star-history.com/#zackees/transcribe-anything&Date)
+
+## Sponsored by [Recall.ai](https://www.recall.ai)
+
+*Supporting open-source transcription innovation since September 2025.*
+
+[<img src="https://github.com/user-attachments/assets/1f92659b-5fd4-43ab-aedc-6adf4d219905" alt="Recall.ai banner" width="300" />](https://www.recall.ai)
+
+🚀 **Why 1,000+ companies choose Recall.ai**
+- **Accurate speaker diarization** — real participant names, not just “Speaker 1/2”
+- **Ultra-low 200 ms latency** for real-time transcripts & audio
+- **99.9% uptime SLA** with enterprise-grade security (SOC 2, HIPAA, ISO 27001)
+- **One API for all meeting platforms** — no platform-specific integrations required
 
 ### New in 3.2!
 
