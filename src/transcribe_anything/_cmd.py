@@ -84,9 +84,10 @@ def parse_arguments() -> argparse.Namespace:
     )
     parser.add_argument(
         "--model",
-        help="name of the Whisper model to us",
+        help="name of the Whisper model to use (e.g., 'small', 'large-v3', or 'namespace/repo_name' for HuggingFace models)",
         default="small",
-        choices=WHISPER_MODEL_OPTIONS,
+        # Removed choices=WHISPER_MODEL_OPTIONS to allow custom model names
+        metavar='MODEL_NAME_OR_PATH',
     )
     parser.add_argument(
         "--task",
