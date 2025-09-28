@@ -273,32 +273,17 @@ def run_insanely_fast_whisper(
         universal_newlines=True,
         encoding="utf-8",
         env=env,
-        stdout=subprocess.PIPE, # Capture stdout
-        stderr=subprocess.PIPE, # Capture stderr
     )
-    stdout_lines = []
-    stderr_lines = []
     while True:
-        stdout_line = proc.stdout.readline() # type: ignore
-        stderr_line = proc.stderr.readline() # type: ignore
-        if stdout_line:
-            if not "Voila!✨" in stdout_line: # Filter out the misleading line
-                sys.stderr.write(stdout_line)
-            stdout_lines.append(stdout_line)
-        if stderr_line:
-            sys.stderr.write(stderr_line)
-            stderr_lines.append(stderr_line)
-        if not stdout_line and not stderr_line and proc.poll() is not None:
-            break
-        time.sleep(0.01)
-
-    # Original check for return code
-    rtn = proc.poll()
-    if rtn is not None and rtn != 0:
-        msg = f"Failed to execute {cmd}\n "
-        raise OSError(msg + "\n".join(stderr_lines))
-
-    # Original proc.wait() is now covered by the loop
+        rtn = proc.poll()
+        if rtn is None:
+            time.sleep(0.1)
+            continue
+        if rtn != 0:
+            msg = f"Failed to execute {cmd}\n "
+            raise OSError(msg)
+        break
+    proc.wait()
     assert outfile.exists(), f"Expected {outfile} to exist."
     json_text = outfile.read_text(encoding="utf-8")
     json_data = json.loads(json_text)
