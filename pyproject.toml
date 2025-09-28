@@ -18,6 +18,7 @@ dependencies = [
     "webvtt-py==0.4.6",
     "uv-iso-env>=1.0.43",
     "python-dotenv>=1.0.1",
+    "gradio>=4.0.0", # Added for the GUI
 ]
 # VERSION
 version = "3.2.3"  # Update this manually or configure setuptools-scm for automatic versioning
