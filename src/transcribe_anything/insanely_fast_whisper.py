@@ -208,6 +208,7 @@ def run_insanely_fast_whisper(
         env["PYTORCH_MPS_HIGH_WATERMARK_RATIO"] = "0"
         # env["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
     device_id = get_device_id()
+
     cmd_list = []
     output_dir.mkdir(parents=True, exist_ok=True)
     outfile = output_dir / "out.json"
