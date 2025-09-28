@@ -180,7 +180,7 @@ def transcribe(
 
     Args:
         url_or_file: Path to local file or URL (YouTube, etc.)
-        output_dir: Directory to save output files
+        output_dir: Base directory to save output files. A subfolder named after the input file will be created inside this.
         model: Whisper model to use (tiny, small, medium, large, etc.)
         task: Task to perform (transcribe or translate)
         language: Language of the audio (auto-detected if None)
@@ -200,24 +200,28 @@ def transcribe(
     if not os.path.isfile(url_or_file) and embed:
         raise NotImplementedError("Embedding is only supported for local files. " + "Please download the file first.")
     # cache = DiskLRUCache(CACHE_FILE, 16)
-    basename = os.path.basename(url_or_file)
-    if not basename or basename == ".":  # if url_or_file is a directory
-        # Defense against paths with a trailing /, for example:
-        # https://example.com/, which will yield a basename of "".
-        basename = os.path.basename(os.path.dirname(url_or_file))
-        basename = sanitize_filename(basename)
-    output_dir_was_generated = False
-    if output_dir is None:
-        output_dir_was_generated = True
-        if url_or_file.startswith("http"):
-            outname = get_video_name_from_url(url_or_file)
-            output_dir = "text_" + sanitize_filename(outname)
-        else:
-            output_dir = "text_" + os.path.splitext(basename)[0]
-    if output_dir_was_generated and language is not None:
-        output_dir = os.path.join(output_dir, language)
-    print(f"making dir {output_dir}")
-    os.makedirs(output_dir, exist_ok=True)
+    basename_without_ext = os.path.splitext(os.path.basename(url_or_file))[0]
+    sanitized_basename = sanitize_filename(basename_without_ext)
+
+    output_dir_was_none = (output_dir is None)
+
+    if output_dir_was_none:
+        # If no output_dir is provided, create a default one based on the sanitized basename
+        output_dir_base = "text_" + sanitized_basename
+    else:
+        # If output_dir is provided, create a subfolder within it named after the file
+        output_dir_base = os.path.join(output_dir, sanitized_basename)
+
+    final_output_dir = output_dir_base
+    if output_dir_was_none and language is not None:
+        # Only add language subfolder if output_dir was originally None
+        final_output_dir = os.path.join(final_output_dir, language)
+
+    print(f"making dir {final_output_dir}")
+    os.makedirs(final_output_dir, exist_ok=True)
+
+    # Update output_dir to the final, dynamically generated path
+    output_dir = final_output_dir
     tmp_wav = make_temp_wav()
     try:
         assert os.path.isdir(output_dir), f"Path {output_dir} is not found or not a directory."
