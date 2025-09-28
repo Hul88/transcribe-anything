@@ -5,9 +5,9 @@ import tempfile
 import shutil
 # import json # Not needed if parse_whisper_options is used directly
 
-from transcribe_anything.api import transcribe
-from transcribe_anything._cmd import WHISPER_MODEL_OPTIONS # Import model options
-from transcribe_anything.parse_whisper_options import parse_whisper_options # Corrected import
+from src.transcribe_anything.api import transcribe
+from src.transcribe_anything._cmd import WHISPER_MODEL_OPTIONS # Import model options
+from src.transcribe_anything.parse_whisper_options import parse_whisper_options # Corrected import
 
 def gradio_transcribe(
     url_input: str,
