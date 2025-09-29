@@ -8,11 +8,10 @@ echo Upgrading pip...
 python -m pip install --upgrade pip
 
 echo Installing core dependencies, including Gradio, openai-whisper, and CPU-enabled Torch...
-REM Note: uv is installed as a dependency of uv-iso-env.
-python -m uv pip install static-ffmpeg yt-dlp appdirs disklru FileLock webvtt-py==0.4.6 uv-iso-env python-dotenv gradio openai-whisper==20240930 numpy==1.26.4 torch==2.2.1
+pip install static-ffmpeg yt-dlp appdirs disklru FileLock webvtt-py==0.4.6 uv-iso-env python-dotenv gradio openai-whisper==20240930 numpy==1.26.4 torch==2.2.1
 
 echo Installing transcribe-anything in editable mode...
-python -m uv pip install -e .
+pip install -e .
 
 echo.
 echo Installation complete!
