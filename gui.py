@@ -122,7 +122,7 @@ with gr.Blocks(title="Transcribe Anything GUI (with German Whisper Turbo)") as i
             value="insane", # Default to insane for GPU
             interactive=True,
         )
-        output_folder_input = gr.Textbox(label="Output Base Folder (e.g., ./transcriptions)", value=str(Path("./transcriptions").absolute()), interactive=True)
+        output_folder_input = gr.Textbox(label="Output Base Folder (e.g., ./output_folder)", value=str(Path("./output_folder").absolute()), interactive=True)
 
     with gr.Accordion("Advanced Options", open=False):
         task_input = gr.Dropdown(
